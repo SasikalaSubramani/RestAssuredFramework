@@ -19,7 +19,7 @@ public class GetUserTest extends BaseTest{
 		restClient = new RestClient(prop, baseURI);
 	}
 	
-	@Test(enabled = false, priority = 3)
+	@Test(enabled = true, priority = 3)
 	public void getAllUsersTest() {
 		restClient.get(GOREST_ENDPOINT, true, true)
 										.then().log().all()
@@ -27,7 +27,7 @@ public class GetUserTest extends BaseTest{
 												.statusCode(APIHttpStatus.OK_200.getCode());
 		
 	}
-	@Test(priority = 2)
+	@Test(priority = 2,enabled = false)
 	public void getUserTest() {	
 		
 		restClient.get(GOREST_ENDPOINT+"/4318629",true, true)
