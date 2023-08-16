@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import com.qa.gorest.base.BaseTest;
 import com.qa.gorest.client.RestClient;
 import com.qa.gorest.constants.APIHttpStatus;
+import com.qa.gorest.pojo.User;
+import com.qa.gorest.utils.StringUtil;
 
 import static org.hamcrest.Matchers.*;
 
@@ -27,14 +29,23 @@ public class GetUserTest extends BaseTest{
 												.statusCode(APIHttpStatus.OK_200.getCode());
 		
 	}
-	@Test(priority = 2,enabled = false)
+	
+	
+	@Test(priority = 2,enabled = true)
 	public void getUserTest() {	
 		
-		restClient.get(GOREST_ENDPOINT+"/4438832",true, true)
+		User user = new User("Sasi", StringUtil.getRandomEmailId(), "female", "active");
+
+		Integer userId = restClient.post(GOREST_ENDPOINT, "json", user, true, true).then().log().all().assertThat()
+				.statusCode(APIHttpStatus.CREATED_201.getCode()).extract().path("id");
+
+		System.out.println("User id: " + userId);
+		
+		restClient.get(GOREST_ENDPOINT+"/"+userId,true, true)
 										.then().log().all()
 											.assertThat()
 												.statusCode(APIHttpStatus.OK_200.getCode())
-													.and().body("id", equalTo(4438832));
+													.and().body("id", equalTo(userId));
 										
 		
 	}

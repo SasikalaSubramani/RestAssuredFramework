@@ -16,7 +16,7 @@
 			<class name="com.qa.gorest.tests.CreateUserTest" />
 
 		</classes>
-	</test>
+	</test> 
 
 	<test name="Go Rest Get API Test">
 		<parameter name="baseURI" value="https://gorest.co.in" />
@@ -41,7 +41,7 @@
 
 	
 
-	<!--<test name="Req Res API Test">
+	<test name="Req Res API Test">
 		<parameter name="baseURI" value="https://reqres.in" />
 
 		<classes>
@@ -56,7 +56,7 @@
 			<class name="com.qa.gorest.tests.CircuitTest" />
 
 		</classes>
-	</test>  -->
+	</test>  
 
 
 
