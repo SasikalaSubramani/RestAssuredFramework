@@ -31,7 +31,7 @@ public class GetUserTest extends BaseTest{
 	}
 	
 	
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 2)
 	public void getUserTest() {	
 		
 		User user = new User("Sasi", StringUtil.getRandomEmailId(), "female", "active");
