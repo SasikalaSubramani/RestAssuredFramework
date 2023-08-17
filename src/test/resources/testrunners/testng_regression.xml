@@ -26,7 +26,7 @@
 		</classes>
 	</test>
 
-	<test name="Amadeus Flight API Test">
+	<!--<test name="Amadeus Flight API Test">
 		<parameter name="baseURI"
 			value="https://test.api.amadeus.com" />
 		<parameter name="grantType" value="client_credentials" />
@@ -41,7 +41,7 @@
 
 
 
-	<!--<test name="Req Res API Test"> <parameter name="baseURI" value="https://reqres.in" 
+	<test name="Req Res API Test"> <parameter name="baseURI" value="https://reqres.in" 
 		/> <classes> <class name="com.qa.gorest.tests.ReqResAPITest" /> </classes> 
 		</test> <test name="Circuit API Test"> <parameter name="baseURI" value="http://ergast.com" 
 		/> <classes> <class name="com.qa.gorest.tests.CircuitTest" /> </classes> 
